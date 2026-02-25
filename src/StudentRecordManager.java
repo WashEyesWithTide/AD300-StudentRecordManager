@@ -28,9 +28,18 @@ public class StudentRecordManager {
         students.remove(id);
     }
 
+    public void changeStudentGPA(int id, double newGPA) {
+        Student student = students.get(id);
+        if (student != null) {
+            student.setGPA(newGPA);
+        }
+        else {
+            System.out.println("Student with ID " + id + " not found.");
+        }
+    }
     public void printAllStudents() {
-        for (Student student : students.values()) {
-            System.out.println(student);
+        for (Map.Entry<Integer, Student> e : students.entrySet()) {
+            System.out.print("ID:" + e.getKey() + " " + e.getValue());
         }
     }
 
@@ -42,5 +51,17 @@ public class StudentRecordManager {
             }
         }
         return result;
+    }
+
+    public void printStudentsAboveGPA(double gpa) {
+        TreeMap<Integer, Student> result = new TreeMap<>();
+        for (Map.Entry<Integer, Student> e : students.entrySet()) {
+            if (e.getValue().getGpa() > gpa) {
+                result.put(e.getKey(), e.getValue());
+            }
+        }
+        for (Map.Entry<Integer, Student> e : result.entrySet()) {
+            System.out.print("ID:" + e.getKey() + " " + e.getValue());
+        }
     }
 }

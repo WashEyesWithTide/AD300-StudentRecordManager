@@ -10,7 +10,12 @@ public class Main {
         studentMap.printAllStudents();
 
         System.out.println("\nStudents with GPA above 3.5:");
-        System.out.println(studentMap.getStudentsAboveGPA(3.5).values());
+        studentMap.printStudentsAboveGPA(3.5);
+
+        studentMap.changeStudentGPA(2, 3.9);
+        System.out.println("\nAfter changing Bob's GPA:");
+        System.out.println("\nStudents with GPA above 3.5:");
+        studentMap.printStudentsAboveGPA(3.5);
 
     }
 }

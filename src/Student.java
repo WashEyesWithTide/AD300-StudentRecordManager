@@ -21,7 +21,19 @@ public class Student {
         return gpa;
     }
 
+    public void setGPA(double gpa) {
+        this.gpa = gpa;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
     public String toString() {
-        return String.format("Student{firstName='%s', lastName='%s', gpa=%.2f}", firstName, lastName, gpa);
+        return String.format("Student{firstName='%s', lastName='%s', gpa=%.2f}\n", firstName, lastName, gpa);
     }
 }
